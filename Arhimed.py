@@ -3,16 +3,20 @@
 
 
 def arh(m,v): 
-    return m*9.8 == 1*9.8*v
-
-
+    if m*9.8 == 1*9.8*v:
+        return ' непонятно '
+    elif m*9.8 < 1*9.8*v:
+        return 'плавает'
+    elif m*9.8 > 1*9.8*v:
+        return 'тонет'
+    
 def main():
     print ('Введите массу тела, объём погруженной части объекта и его плотность')
     m = int(input())
     v = int(input())
     p = int(input())
     res = arh(m,v)
-    print ('Объект плавучий')
+    print ('Объект плавучий?')
     print (res)
 
 if __name__=='__main__':
